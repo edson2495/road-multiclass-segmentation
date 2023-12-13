@@ -1,0 +1,407 @@
+Model: "UNETR_2D"
+______________________________________________________________________________________________________________________________________________________
+ Layer (type)                                    Output Shape                     Param #           Connected to                                      
+======================================================================================================================================================
+ input_5 (InputLayer)                            [(None, 256, 768)]               0                 []                                                
+                                                                                                                                                      
+ dense_50 (Dense)                                (None, 256, 768)                 590592            ['input_5[0][0]']                                 
+                                                                                                                                                      
+ tf.__operators__.add_2 (TFOpLambda)             (None, 256, 768)                 0                 ['dense_50[0][0]']                                
+                                                                                                                                                      
+ layer_normalization_48 (LayerNormalization)     (None, 256, 768)                 1536              ['tf.__operators__.add_2[0][0]']                  
+                                                                                                                                                      
+ multi_head_attention_24 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_48[0][0]',                  
+                                                                                                     'layer_normalization_48[0][0]']                  
+                                                                                                                                                      
+ add_48 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_24[0][0]',                 
+                                                                                                     'tf.__operators__.add_2[0][0]']                  
+                                                                                                                                                      
+ layer_normalization_49 (LayerNormalization)     (None, 256, 768)                 1536              ['add_48[0][0]']                                  
+                                                                                                                                                      
+ dense_51 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_49[0][0]']                  
+                                                                                                                                                      
+ dropout_66 (Dropout)                            (None, 256, 3072)                0                 ['dense_51[0][0]']                                
+                                                                                                                                                      
+ dense_52 (Dense)                                (None, 256, 768)                 2360064           ['dropout_66[0][0]']                              
+                                                                                                                                                      
+ dropout_67 (Dropout)                            (None, 256, 768)                 0                 ['dense_52[0][0]']                                
+                                                                                                                                                      
+ add_49 (Add)                                    (None, 256, 768)                 0                 ['dropout_67[0][0]',                              
+                                                                                                     'add_48[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_50 (LayerNormalization)     (None, 256, 768)                 1536              ['add_49[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_25 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_50[0][0]',                  
+                                                                                                     'layer_normalization_50[0][0]']                  
+                                                                                                                                                      
+ add_50 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_25[0][0]',                 
+                                                                                                     'add_49[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_51 (LayerNormalization)     (None, 256, 768)                 1536              ['add_50[0][0]']                                  
+                                                                                                                                                      
+ dense_53 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_51[0][0]']                  
+                                                                                                                                                      
+ dropout_68 (Dropout)                            (None, 256, 3072)                0                 ['dense_53[0][0]']                                
+                                                                                                                                                      
+ dense_54 (Dense)                                (None, 256, 768)                 2360064           ['dropout_68[0][0]']                              
+                                                                                                                                                      
+ dropout_69 (Dropout)                            (None, 256, 768)                 0                 ['dense_54[0][0]']                                
+                                                                                                                                                      
+ add_51 (Add)                                    (None, 256, 768)                 0                 ['dropout_69[0][0]',                              
+                                                                                                     'add_50[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_52 (LayerNormalization)     (None, 256, 768)                 1536              ['add_51[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_26 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_52[0][0]',                  
+                                                                                                     'layer_normalization_52[0][0]']                  
+                                                                                                                                                      
+ add_52 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_26[0][0]',                 
+                                                                                                     'add_51[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_53 (LayerNormalization)     (None, 256, 768)                 1536              ['add_52[0][0]']                                  
+                                                                                                                                                      
+ dense_55 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_53[0][0]']                  
+                                                                                                                                                      
+ dropout_70 (Dropout)                            (None, 256, 3072)                0                 ['dense_55[0][0]']                                
+                                                                                                                                                      
+ dense_56 (Dense)                                (None, 256, 768)                 2360064           ['dropout_70[0][0]']                              
+                                                                                                                                                      
+ dropout_71 (Dropout)                            (None, 256, 768)                 0                 ['dense_56[0][0]']                                
+                                                                                                                                                      
+ add_53 (Add)                                    (None, 256, 768)                 0                 ['dropout_71[0][0]',                              
+                                                                                                     'add_52[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_54 (LayerNormalization)     (None, 256, 768)                 1536              ['add_53[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_27 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_54[0][0]',                  
+                                                                                                     'layer_normalization_54[0][0]']                  
+                                                                                                                                                      
+ add_54 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_27[0][0]',                 
+                                                                                                     'add_53[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_55 (LayerNormalization)     (None, 256, 768)                 1536              ['add_54[0][0]']                                  
+                                                                                                                                                      
+ dense_57 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_55[0][0]']                  
+                                                                                                                                                      
+ dropout_72 (Dropout)                            (None, 256, 3072)                0                 ['dense_57[0][0]']                                
+                                                                                                                                                      
+ dense_58 (Dense)                                (None, 256, 768)                 2360064           ['dropout_72[0][0]']                              
+                                                                                                                                                      
+ dropout_73 (Dropout)                            (None, 256, 768)                 0                 ['dense_58[0][0]']                                
+                                                                                                                                                      
+ add_55 (Add)                                    (None, 256, 768)                 0                 ['dropout_73[0][0]',                              
+                                                                                                     'add_54[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_56 (LayerNormalization)     (None, 256, 768)                 1536              ['add_55[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_28 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_56[0][0]',                  
+                                                                                                     'layer_normalization_56[0][0]']                  
+                                                                                                                                                      
+ add_56 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_28[0][0]',                 
+                                                                                                     'add_55[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_57 (LayerNormalization)     (None, 256, 768)                 1536              ['add_56[0][0]']                                  
+                                                                                                                                                      
+ dense_59 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_57[0][0]']                  
+                                                                                                                                                      
+ dropout_74 (Dropout)                            (None, 256, 3072)                0                 ['dense_59[0][0]']                                
+                                                                                                                                                      
+ dense_60 (Dense)                                (None, 256, 768)                 2360064           ['dropout_74[0][0]']                              
+                                                                                                                                                      
+ dropout_75 (Dropout)                            (None, 256, 768)                 0                 ['dense_60[0][0]']                                
+                                                                                                                                                      
+ add_57 (Add)                                    (None, 256, 768)                 0                 ['dropout_75[0][0]',                              
+                                                                                                     'add_56[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_58 (LayerNormalization)     (None, 256, 768)                 1536              ['add_57[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_29 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_58[0][0]',                  
+                                                                                                     'layer_normalization_58[0][0]']                  
+                                                                                                                                                      
+ add_58 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_29[0][0]',                 
+                                                                                                     'add_57[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_59 (LayerNormalization)     (None, 256, 768)                 1536              ['add_58[0][0]']                                  
+                                                                                                                                                      
+ dense_61 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_59[0][0]']                  
+                                                                                                                                                      
+ dropout_76 (Dropout)                            (None, 256, 3072)                0                 ['dense_61[0][0]']                                
+                                                                                                                                                      
+ dense_62 (Dense)                                (None, 256, 768)                 2360064           ['dropout_76[0][0]']                              
+                                                                                                                                                      
+ dropout_77 (Dropout)                            (None, 256, 768)                 0                 ['dense_62[0][0]']                                
+                                                                                                                                                      
+ add_59 (Add)                                    (None, 256, 768)                 0                 ['dropout_77[0][0]',                              
+                                                                                                     'add_58[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_60 (LayerNormalization)     (None, 256, 768)                 1536              ['add_59[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_30 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_60[0][0]',                  
+                                                                                                     'layer_normalization_60[0][0]']                  
+                                                                                                                                                      
+ add_60 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_30[0][0]',                 
+                                                                                                     'add_59[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_61 (LayerNormalization)     (None, 256, 768)                 1536              ['add_60[0][0]']                                  
+                                                                                                                                                      
+ dense_63 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_61[0][0]']                  
+                                                                                                                                                      
+ dropout_78 (Dropout)                            (None, 256, 3072)                0                 ['dense_63[0][0]']                                
+                                                                                                                                                      
+ dense_64 (Dense)                                (None, 256, 768)                 2360064           ['dropout_78[0][0]']                              
+                                                                                                                                                      
+ dropout_79 (Dropout)                            (None, 256, 768)                 0                 ['dense_64[0][0]']                                
+                                                                                                                                                      
+ add_61 (Add)                                    (None, 256, 768)                 0                 ['dropout_79[0][0]',                              
+                                                                                                     'add_60[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_62 (LayerNormalization)     (None, 256, 768)                 1536              ['add_61[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_31 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_62[0][0]',                  
+                                                                                                     'layer_normalization_62[0][0]']                  
+                                                                                                                                                      
+ add_62 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_31[0][0]',                 
+                                                                                                     'add_61[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_63 (LayerNormalization)     (None, 256, 768)                 1536              ['add_62[0][0]']                                  
+                                                                                                                                                      
+ dense_65 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_63[0][0]']                  
+                                                                                                                                                      
+ dropout_80 (Dropout)                            (None, 256, 3072)                0                 ['dense_65[0][0]']                                
+                                                                                                                                                      
+ dense_66 (Dense)                                (None, 256, 768)                 2360064           ['dropout_80[0][0]']                              
+                                                                                                                                                      
+ dropout_81 (Dropout)                            (None, 256, 768)                 0                 ['dense_66[0][0]']                                
+                                                                                                                                                      
+ add_63 (Add)                                    (None, 256, 768)                 0                 ['dropout_81[0][0]',                              
+                                                                                                     'add_62[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_64 (LayerNormalization)     (None, 256, 768)                 1536              ['add_63[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_32 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_64[0][0]',                  
+                                                                                                     'layer_normalization_64[0][0]']                  
+                                                                                                                                                      
+ add_64 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_32[0][0]',                 
+                                                                                                     'add_63[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_65 (LayerNormalization)     (None, 256, 768)                 1536              ['add_64[0][0]']                                  
+                                                                                                                                                      
+ dense_67 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_65[0][0]']                  
+                                                                                                                                                      
+ dropout_82 (Dropout)                            (None, 256, 3072)                0                 ['dense_67[0][0]']                                
+                                                                                                                                                      
+ dense_68 (Dense)                                (None, 256, 768)                 2360064           ['dropout_82[0][0]']                              
+                                                                                                                                                      
+ dropout_83 (Dropout)                            (None, 256, 768)                 0                 ['dense_68[0][0]']                                
+                                                                                                                                                      
+ add_65 (Add)                                    (None, 256, 768)                 0                 ['dropout_83[0][0]',                              
+                                                                                                     'add_64[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_66 (LayerNormalization)     (None, 256, 768)                 1536              ['add_65[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_33 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_66[0][0]',                  
+                                                                                                     'layer_normalization_66[0][0]']                  
+                                                                                                                                                      
+ add_66 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_33[0][0]',                 
+                                                                                                     'add_65[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_67 (LayerNormalization)     (None, 256, 768)                 1536              ['add_66[0][0]']                                  
+                                                                                                                                                      
+ dense_69 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_67[0][0]']                  
+                                                                                                                                                      
+ dropout_84 (Dropout)                            (None, 256, 3072)                0                 ['dense_69[0][0]']                                
+                                                                                                                                                      
+ dense_70 (Dense)                                (None, 256, 768)                 2360064           ['dropout_84[0][0]']                              
+                                                                                                                                                      
+ dropout_85 (Dropout)                            (None, 256, 768)                 0                 ['dense_70[0][0]']                                
+                                                                                                                                                      
+ add_67 (Add)                                    (None, 256, 768)                 0                 ['dropout_85[0][0]',                              
+                                                                                                     'add_66[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_68 (LayerNormalization)     (None, 256, 768)                 1536              ['add_67[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_34 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_68[0][0]',                  
+                                                                                                     'layer_normalization_68[0][0]']                  
+                                                                                                                                                      
+ add_68 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_34[0][0]',                 
+                                                                                                     'add_67[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_69 (LayerNormalization)     (None, 256, 768)                 1536              ['add_68[0][0]']                                  
+                                                                                                                                                      
+ dense_71 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_69[0][0]']                  
+                                                                                                                                                      
+ dropout_86 (Dropout)                            (None, 256, 3072)                0                 ['dense_71[0][0]']                                
+                                                                                                                                                      
+ dense_72 (Dense)                                (None, 256, 768)                 2360064           ['dropout_86[0][0]']                              
+                                                                                                                                                      
+ dropout_87 (Dropout)                            (None, 256, 768)                 0                 ['dense_72[0][0]']                                
+                                                                                                                                                      
+ add_69 (Add)                                    (None, 256, 768)                 0                 ['dropout_87[0][0]',                              
+                                                                                                     'add_68[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_70 (LayerNormalization)     (None, 256, 768)                 1536              ['add_69[0][0]']                                  
+                                                                                                                                                      
+ multi_head_attention_35 (MultiHeadAttention)    (None, 256, 768)                 28339968          ['layer_normalization_70[0][0]',                  
+                                                                                                     'layer_normalization_70[0][0]']                  
+                                                                                                                                                      
+ add_70 (Add)                                    (None, 256, 768)                 0                 ['multi_head_attention_35[0][0]',                 
+                                                                                                     'add_69[0][0]']                                  
+                                                                                                                                                      
+ layer_normalization_71 (LayerNormalization)     (None, 256, 768)                 1536              ['add_70[0][0]']                                  
+                                                                                                                                                      
+ dense_73 (Dense)                                (None, 256, 3072)                2362368           ['layer_normalization_71[0][0]']                  
+                                                                                                                                                      
+ dropout_88 (Dropout)                            (None, 256, 3072)                0                 ['dense_73[0][0]']                                
+                                                                                                                                                      
+ dense_74 (Dense)                                (None, 256, 768)                 2360064           ['dropout_88[0][0]']                              
+                                                                                                                                                      
+ reshape_13 (Reshape)                            (None, 16, 16, 768)              0                 ['add_65[0][0]']                                  
+                                                                                                                                                      
+ dropout_89 (Dropout)                            (None, 256, 768)                 0                 ['dense_74[0][0]']                                
+                                                                                                                                                      
+ conv2d_transpose_21 (Conv2DTranspose)           (None, 32, 32, 512)              1573376           ['reshape_13[0][0]']                              
+                                                                                                                                                      
+ add_71 (Add)                                    (None, 256, 768)                 0                 ['dropout_89[0][0]',                              
+                                                                                                     'add_70[0][0]']                                  
+                                                                                                                                                      
+ conv2d_72 (Conv2D)                              (None, 32, 32, 512)              2359808           ['conv2d_transpose_21[0][0]']                     
+                                                                                                                                                      
+ reshape_14 (Reshape)                            (None, 16, 16, 768)              0                 ['add_71[0][0]']                                  
+                                                                                                                                                      
+ batch_normalization_70 (BatchNormalization)     (None, 32, 32, 512)              2048              ['conv2d_72[0][0]']                               
+                                                                                                                                                      
+ conv2d_transpose_20 (Conv2DTranspose)           (None, 32, 32, 512)              1573376           ['reshape_14[0][0]']                              
+                                                                                                                                                      
+ re_lu_32 (ReLU)                                 (None, 32, 32, 512)              0                 ['batch_normalization_70[0][0]']                  
+                                                                                                                                                      
+ reshape_12 (Reshape)                            (None, 16, 16, 768)              0                 ['add_59[0][0]']                                  
+                                                                                                                                                      
+ concatenate_16 (Concatenate)                    (None, 32, 32, 1024)             0                 ['conv2d_transpose_20[0][0]',                     
+                                                                                                     're_lu_32[0][0]']                                
+                                                                                                                                                      
+ conv2d_transpose_23 (Conv2DTranspose)           (None, 32, 32, 256)              786688            ['reshape_12[0][0]']                              
+                                                                                                                                                      
+ conv2d_73 (Conv2D)                              (None, 32, 32, 512)              4719104           ['concatenate_16[0][0]']                          
+                                                                                                                                                      
+ conv2d_75 (Conv2D)                              (None, 32, 32, 256)              590080            ['conv2d_transpose_23[0][0]']                     
+                                                                                                                                                      
+ batch_normalization_71 (BatchNormalization)     (None, 32, 32, 512)              2048              ['conv2d_73[0][0]']                               
+                                                                                                                                                      
+ batch_normalization_73 (BatchNormalization)     (None, 32, 32, 256)              1024              ['conv2d_75[0][0]']                               
+                                                                                                                                                      
+ re_lu_33 (ReLU)                                 (None, 32, 32, 512)              0                 ['batch_normalization_71[0][0]']                  
+                                                                                                                                                      
+ re_lu_35 (ReLU)                                 (None, 32, 32, 256)              0                 ['batch_normalization_73[0][0]']                  
+                                                                                                                                                      
+ reshape_11 (Reshape)                            (None, 16, 16, 768)              0                 ['add_53[0][0]']                                  
+                                                                                                                                                      
+ conv2d_74 (Conv2D)                              (None, 32, 32, 512)              2359808           ['re_lu_33[0][0]']                                
+                                                                                                                                                      
+ conv2d_transpose_24 (Conv2DTranspose)           (None, 64, 64, 256)              262400            ['re_lu_35[0][0]']                                
+                                                                                                                                                      
+ conv2d_transpose_26 (Conv2DTranspose)           (None, 32, 32, 128)              393344            ['reshape_11[0][0]']                              
+                                                                                                                                                      
+ batch_normalization_72 (BatchNormalization)     (None, 32, 32, 512)              2048              ['conv2d_74[0][0]']                               
+                                                                                                                                                      
+ conv2d_76 (Conv2D)                              (None, 64, 64, 256)              590080            ['conv2d_transpose_24[0][0]']                     
+                                                                                                                                                      
+ conv2d_79 (Conv2D)                              (None, 32, 32, 128)              147584            ['conv2d_transpose_26[0][0]']                     
+                                                                                                                                                      
+ re_lu_34 (ReLU)                                 (None, 32, 32, 512)              0                 ['batch_normalization_72[0][0]']                  
+                                                                                                                                                      
+ batch_normalization_74 (BatchNormalization)     (None, 64, 64, 256)              1024              ['conv2d_76[0][0]']                               
+                                                                                                                                                      
+ batch_normalization_77 (BatchNormalization)     (None, 32, 32, 128)              512               ['conv2d_79[0][0]']                               
+                                                                                                                                                      
+ conv2d_transpose_22 (Conv2DTranspose)           (None, 64, 64, 256)              524544            ['re_lu_34[0][0]']                                
+                                                                                                                                                      
+ re_lu_36 (ReLU)                                 (None, 64, 64, 256)              0                 ['batch_normalization_74[0][0]']                  
+                                                                                                                                                      
+ re_lu_39 (ReLU)                                 (None, 32, 32, 128)              0                 ['batch_normalization_77[0][0]']                  
+                                                                                                                                                      
+ concatenate_17 (Concatenate)                    (None, 64, 64, 512)              0                 ['conv2d_transpose_22[0][0]',                     
+                                                                                                     're_lu_36[0][0]']                                
+                                                                                                                                                      
+ conv2d_transpose_27 (Conv2DTranspose)           (None, 64, 64, 128)              65664             ['re_lu_39[0][0]']                                
+                                                                                                                                                      
+ conv2d_77 (Conv2D)                              (None, 64, 64, 256)              1179904           ['concatenate_17[0][0]']                          
+                                                                                                                                                      
+ conv2d_80 (Conv2D)                              (None, 64, 64, 128)              147584            ['conv2d_transpose_27[0][0]']                     
+                                                                                                                                                      
+ batch_normalization_75 (BatchNormalization)     (None, 64, 64, 256)              1024              ['conv2d_77[0][0]']                               
+                                                                                                                                                      
+ batch_normalization_78 (BatchNormalization)     (None, 64, 64, 128)              512               ['conv2d_80[0][0]']                               
+                                                                                                                                                      
+ re_lu_37 (ReLU)                                 (None, 64, 64, 256)              0                 ['batch_normalization_75[0][0]']                  
+                                                                                                                                                      
+ re_lu_40 (ReLU)                                 (None, 64, 64, 128)              0                 ['batch_normalization_78[0][0]']                  
+                                                                                                                                                      
+ conv2d_78 (Conv2D)                              (None, 64, 64, 256)              590080            ['re_lu_37[0][0]']                                
+                                                                                                                                                      
+ conv2d_transpose_28 (Conv2DTranspose)           (None, 128, 128, 128)            65664             ['re_lu_40[0][0]']                                
+                                                                                                                                                      
+ batch_normalization_76 (BatchNormalization)     (None, 64, 64, 256)              1024              ['conv2d_78[0][0]']                               
+                                                                                                                                                      
+ conv2d_81 (Conv2D)                              (None, 128, 128, 128)            147584            ['conv2d_transpose_28[0][0]']                     
+                                                                                                                                                      
+ re_lu_38 (ReLU)                                 (None, 64, 64, 256)              0                 ['batch_normalization_76[0][0]']                  
+                                                                                                                                                      
+ batch_normalization_79 (BatchNormalization)     (None, 128, 128, 128)            512               ['conv2d_81[0][0]']                               
+                                                                                                                                                      
+ conv2d_transpose_25 (Conv2DTranspose)           (None, 128, 128, 128)            131200            ['re_lu_38[0][0]']                                
+                                                                                                                                                      
+ re_lu_41 (ReLU)                                 (None, 128, 128, 128)            0                 ['batch_normalization_79[0][0]']                  
+                                                                                                                                                      
+ concatenate_18 (Concatenate)                    (None, 128, 128, 256)            0                 ['conv2d_transpose_25[0][0]',                     
+                                                                                                     're_lu_41[0][0]']                                
+                                                                                                                                                      
+ conv2d_82 (Conv2D)                              (None, 128, 128, 128)            295040            ['concatenate_18[0][0]']                          
+                                                                                                                                                      
+ reshape_10 (Reshape)                            (None, 256, 256, 3)              0                 ['input_5[0][0]']                                 
+                                                                                                                                                      
+ batch_normalization_80 (BatchNormalization)     (None, 128, 128, 128)            512               ['conv2d_82[0][0]']                               
+                                                                                                                                                      
+ conv2d_84 (Conv2D)                              (None, 256, 256, 64)             1792              ['reshape_10[0][0]']                              
+                                                                                                                                                      
+ re_lu_42 (ReLU)                                 (None, 128, 128, 128)            0                 ['batch_normalization_80[0][0]']                  
+                                                                                                                                                      
+ batch_normalization_82 (BatchNormalization)     (None, 256, 256, 64)             256               ['conv2d_84[0][0]']                               
+                                                                                                                                                      
+ conv2d_83 (Conv2D)                              (None, 128, 128, 128)            147584            ['re_lu_42[0][0]']                                
+                                                                                                                                                      
+ re_lu_44 (ReLU)                                 (None, 256, 256, 64)             0                 ['batch_normalization_82[0][0]']                  
+                                                                                                                                                      
+ batch_normalization_81 (BatchNormalization)     (None, 128, 128, 128)            512               ['conv2d_83[0][0]']                               
+                                                                                                                                                      
+ conv2d_85 (Conv2D)                              (None, 256, 256, 64)             36928             ['re_lu_44[0][0]']                                
+                                                                                                                                                      
+ re_lu_43 (ReLU)                                 (None, 128, 128, 128)            0                 ['batch_normalization_81[0][0]']                  
+                                                                                                                                                      
+ batch_normalization_83 (BatchNormalization)     (None, 256, 256, 64)             256               ['conv2d_85[0][0]']                               
+                                                                                                                                                      
+ conv2d_transpose_29 (Conv2DTranspose)           (None, 256, 256, 64)             32832             ['re_lu_43[0][0]']                                
+                                                                                                                                                      
+ re_lu_45 (ReLU)                                 (None, 256, 256, 64)             0                 ['batch_normalization_83[0][0]']                  
+                                                                                                                                                      
+ concatenate_19 (Concatenate)                    (None, 256, 256, 128)            0                 ['conv2d_transpose_29[0][0]',                     
+                                                                                                     're_lu_45[0][0]']                                
+                                                                                                                                                      
+ conv2d_86 (Conv2D)                              (None, 256, 256, 64)             73792             ['concatenate_19[0][0]']                          
+                                                                                                                                                      
+ batch_normalization_84 (BatchNormalization)     (None, 256, 256, 64)             256               ['conv2d_86[0][0]']                               
+                                                                                                                                                      
+ re_lu_46 (ReLU)                                 (None, 256, 256, 64)             0                 ['batch_normalization_84[0][0]']                  
+                                                                                                                                                      
+ conv2d_87 (Conv2D)                              (None, 256, 256, 64)             36928             ['re_lu_46[0][0]']                                
+                                                                                                                                                      
+ batch_normalization_85 (BatchNormalization)     (None, 256, 256, 64)             256               ['conv2d_87[0][0]']                               
+                                                                                                                                                      
+ re_lu_47 (ReLU)                                 (None, 256, 256, 64)             0                 ['batch_normalization_85[0][0]']                  
+                                                                                                                                                      
+ conv2d_88 (Conv2D)                              (None, 256, 256, 3)              195               ['re_lu_47[0][0]']                                
+                                                                                                                                                      
+======================================================================================================================================================
+Total params: 416,223,043
+Trainable params: 416,216,131
+Non-trainable params: 6,912
+______________________________________________________________________________________________________________________________________________________
